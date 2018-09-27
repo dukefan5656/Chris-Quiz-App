@@ -1,0 +1,153 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;   
+  font-size: 16px;
+  font-weight: normal;
+  color: black;
+  text-decoration: none;
+  font-family: sans-serif;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+body{
+  background-image: url("http://jllsly.com/wallpapers/sports-s-wallpaper-desktop-background-Is-Cool-Wallpapers.jpg");
+
+}
+
+h1{
+  text-align: center;
+  font-size: 25px;
+  background-color: rgba(42,107,191,.9);
+  padding: 40px;
+  margin-bottom: 40px;
+  color: #e8e8e8;
+}
+
+h2{
+  font-size: 30px;
+  padding: 20px;
+  color: #e8e8e8;
+}
+
+h3{
+  font-weight: bolder;
+  font-size: 20px;
+  color: #e8e8e8;
+}
+
+.description {
+  padding: 25px;
+  height: 450px;
+  background-color: rgba(255,255,255,0.8);
+  display: flex;
+  flex-direction: column;
+}
+
+.description h2{
+  color: black;
+}
+
+.slide {
+opacity: 0;
+animation: fade-in ease 1s forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+button:hover{
+  background-color: #2A6BBF;
+  color: white;
+  border: 2px solid #2A6BBF;
+}
+
+button{
+  border: 2px solid #D13119;
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.quiz, .summary {
+  display: none;
+}
+
+.summary {
+  background-color: rgba(42,107,191,.9);
+  padding: 20px;
+}
+
+.summary p {
+  color: white;
+}
+
+.quiz ul{
+  list-style: none;
+  padding: 0;
+  clear: both;
+}
+
+.quiz li{
+  cursor: pointer;
+  display: inline-block;
+  border: 1px solid black;
+  padding: 10px 15px;
+  margin: 10px;
+  transition: all .2s ease-in-out;
+  color: white;
+  background-color: #2A6BBF;
+  border-radius: 5px; 
+  margin-top: 15px;
+}
+
+.quiz li.selected {
+  background-color: white;
+  transform: scale(1.2);
+  color: #2A6BBF;
+}
+.quiz li.selected.correct {
+  background-color: green;
+  color: white;
+}
+
+.quiz li.selected.incorrect {
+  background-color: red;
+  color: white;
+}
+
+.quiz li:hover {
+  transform: scale(1.2);
+}
+
+.banner{
+  background-color: rgba(42,107,191,.9);
+  padding: 15px;
+}
+
+.clue{
+  width: 300px;
+  background-image: url('');
+  height: 450px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: relative;
+  margin: 20px auto 0;
+}
+
+img{
+  height: 450px;
+  width: 300px;
+  margin-bottom: 40px;
+  border-radius: 5px;
+}
