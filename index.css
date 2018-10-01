@@ -38,11 +38,29 @@ h3{
 }
 
 .description {
-  padding: 25px;
   height: 450px;
   background-color: rgba(255,255,255,0.8);
   display: flex;
   flex-direction: column;
+}
+
+.athlete {
+    height: 450px;
+    background-color: rgba(255,255,255,0.8);
+    display: flex;
+    flex-direction: column;
+  }
+
+.info {
+  display: inline-block;
+  height: 450px;
+  width: 300px;
+  position: absolute;
+  background-color: rgba(255,255,255,0.8);
+  padding-left: 20px;
+  padding-right: 20px;
+  
+
 }
 
 .description h2{
@@ -92,12 +110,13 @@ button{
 }
 
 .quiz ul{
+  display: inline-flex;
   list-style: none;
   padding: 0;
   clear: both;
 }
 
-.quiz li{
+.quiz .choice{
   cursor: pointer;
   display: inline-block;
   border: 1px solid black;
@@ -110,23 +129,23 @@ button{
   margin-top: 15px;
 }
 
-.quiz li.selected {
+.quiz li.selected input {
   background-color: white;
   transform: scale(1.2);
   color: #2A6BBF;
 }
-.quiz li.selected.correct {
+.quiz input.choice.correct{
   background-color: green;
   color: white;
 }
 
-.quiz li.selected.incorrect {
+.quiz input.choice.incorrect {
   background-color: red;
   color: white;
 }
 
 .quiz li:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .banner{
@@ -136,18 +155,15 @@ button{
 
 .clue{
   width: 300px;
-  background-image: url('');
+  /* background-image: url(''); */
   height: 450px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
   display: relative;
   margin: 20px auto 0;
 }
 
 img{
+  position: relative;
   height: 450px;
   width: 300px;
-  margin-bottom: 40px;
   border-radius: 5px;
 }

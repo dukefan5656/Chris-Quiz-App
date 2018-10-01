@@ -12,7 +12,7 @@ let questions = [
   },
   {
     description: "Vasyl Lomanchenko is a Ukrainian professional boxer. He has held the WBA (Super) and Ring magazine lightweight titles since May 2018, and previously the WBO featherweight and junior lightweight titles between 2014 and 2018. As of September 2018, Lomachenko is ranked as the world's best active boxer, pound for pound, by ESPN; the Boxing Writers Association of America; the Transnational Boxing Rankings Board; and The Ring.",
-    picture: 'https://www.gannett-cdn.com/-mm-/fe4c290fc9ed25929447a5f0bc5d2cad2d4b2f7a/c=204-0-3400-2403/local/-/media/2017/12/14/Camarillo/Camarillo/636488570848877073-AP17344175807363.jpg?width=534&height=401&fit=crop',
+    picture: 'https://firenewsfeed.com/image/aHR0cHM6Ly93d3cudGhlc3VuLmNvLnVrL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE4LzA1L25pbnRjaGRicGljdDAwMDM3MjE2MDI5NC5qcGc=',
     title: 'Who Is This Boxer?',
     answers: ['Wladimir Klitschko', 'Vasyl Lomachenko', 'Vitali Klitschko', 'Andreas Kotelnik'],
     correct: 1,
@@ -77,7 +77,7 @@ let questions = [
 
 $(document).ready(function(){
 
-  $('.start').click(function(event){
+  $('.start').on('click', '.start', function(event){
     event.preventDefault();
     $('.start').hide();
     $('.quiz').show();
@@ -88,23 +88,27 @@ $(document).ready(function(){
   $('.quiz ul').on('click', 'li', function(){
     $('.selected').removeClass('selected');
     $(this).addClass('selected');
+    $('#submit').show();
   });
 
   $('.quiz ul').on('keypress', 'li', function(){
     $('.selected').removeClass('selected');
     $(this).addClass('selected');
+    $('#submit').show();
   });
 
 
   $('.quiz #submit').click(function(event){
     event.preventDefault();
+      $('li').prop('disabled', true);
+    // $('input button').css({'pointer-events': 'none'});
     if($('li.selected').length){
-      let guess = parseInt($('li.selected').attr('id'));
+      let guess = parseInt($('li.selected input').attr('id'));
       checkAnswer(guess);
       $('.quiz #submit').hide();
       $('.quiz #next').show();
-      $('.quiz .description').show();
-      $('.quiz .description').addClass('slide');
+      $('.quiz .info').show();
+      $('.quiz .info').addClass('slide');
       if(currentQuestion >= questions.length){
         $('.quiz #next').hide();
       }
@@ -132,24 +136,28 @@ $(document).ready(function(){
 
 function showQuestion(){
   $('.quiz #next').hide();
-  $('.quiz #submit').show();
+  $('.quiz #submit').hide();
   $('.quiz #finish').hide();
   let question = questions[currentQuestion];
   $('.quiz h3').text(`On question ${currentQuestion + 1} of ${questions.length}`);
   $('.quiz h2').text(question.title + ` Currently ${score} out of ${currentQuestion}`);
   $('.quiz ul').html('');
-  $('.clue').css('background-image', "url('" + question.picture + "')");
-  $('.clue').html(` <div class="athlete">
-    
+  // $('.clue').css('background-image', "url('" + question.picture + "')");
+  $('.clue').html(`
   <div class="description">
+    <img src="${question.picture}" alt="image of quiz clue"><div class="info">
     <h2>${question.answers[question.correct]}</h2>
     <p>${question.description}</p>
-  </div>
-</div>`);
-  $('.quiz .description').hide();
+    </div>
+  </div>`);
+  $('.quiz .info').hide();
   for(var i = 0; i < question.answers.length; i++){
     $('.quiz ul').append(`
-    <li role="radio" aria-label="option ${i} of four" tabindex="0" id="${i}">${question.answers[i]}</li>
+    <li>
+    <label>
+    <input type="button" role="button" class="choice" aria-label="option ${i} of four" tabindex="0" id="${i}" value="${question.answers[i]}" "required">
+    </label>
+    </li>
     `);
   }
 }
@@ -157,10 +165,10 @@ function showQuestion(){
 function checkAnswer(guess){
   let question = questions[currentQuestion];
   if(question.correct === guess){
-    $('.selected').addClass('correct');
+    $('.selected input').addClass('correct');
     score++;
   } else{
-    $('.selected').addClass('incorrect');
+    $('.selected input').addClass('incorrect');
   }
   currentQuestion++;
   if(currentQuestion == questions.length){
