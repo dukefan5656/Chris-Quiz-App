@@ -13,7 +13,10 @@
 
 body{
   background-image: url("http://jllsly.com/wallpapers/sports-s-wallpaper-desktop-background-Is-Cool-Wallpapers.jpg");
+}
 
+fieldset {
+  border: none;
 }
 
 h1{
@@ -39,17 +42,11 @@ h3{
 
 .description {
   height: 450px;
-  background-color: rgba(255,255,255,0.8);
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  border-radius: 5px;
+  margin: 0 auto;
 }
-
-.athlete {
-    height: 450px;
-    background-color: rgba(255,255,255,0.8);
-    display: flex;
-    flex-direction: column;
-  }
 
 .info {
   display: inline-block;
@@ -59,15 +56,17 @@ h3{
   background-color: rgba(255,255,255,0.8);
   padding-left: 20px;
   padding-right: 20px;
-  
+  border-radius: 5px;
 
 }
 
-.description h2{
+.description h3{
   color: black;
+  font-size: 30px;
+  padding: 20px;
 }
 
-.slide {
+.fade {
 opacity: 0;
 animation: fade-in ease 1s forwards;
 }
@@ -87,14 +86,25 @@ button:hover{
   border: 2px solid #2A6BBF;
 }
 
+button.restart{
+  margin-top: 15px;
+}
+
+button.restart:hover{
+  background-color: white;
+  border: 2px solid #D13119;
+  padding: 10px 20px;
+  color: black;
+  transform: scale(1.1);
+}
+
 button{
   border: 2px solid #D13119;
   padding: 10px 20px;
   background-color: white;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 10px;
-}
+  }
 
 .quiz, .summary {
   display: none;
@@ -110,28 +120,28 @@ button{
 }
 
 .quiz ul{
-  display: inline-flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   list-style: none;
   padding: 0;
   clear: both;
 }
 
-.quiz .choice{
+.choice{
   cursor: pointer;
   display: inline-block;
   border: 1px solid black;
   padding: 10px 15px;
-  margin: 10px;
-  transition: all .2s ease-in-out;
   color: white;
   background-color: #2A6BBF;
   border-radius: 5px; 
   margin-top: 15px;
+  margin-right: 15px;
 }
 
 .quiz li.selected input {
   background-color: white;
-  transform: scale(1.2);
   color: #2A6BBF;
 }
 .quiz input.choice.correct{
@@ -144,18 +154,30 @@ button{
   color: white;
 }
 
-.quiz li:hover {
+/* was .quiz li:hover */
+.hover:hover {  
   transform: scale(1.1);
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 .banner{
   background-color: rgba(42,107,191,.9);
   padding: 15px;
+  min-width: 100%;
 }
 
 .clue{
   width: 300px;
-  /* background-image: url(''); */
   height: 450px;
   display: relative;
   margin: 20px auto 0;
@@ -166,4 +188,8 @@ img{
   height: 450px;
   width: 300px;
   border-radius: 5px;
+}
+
+.col-3, .col-4, .col-6, .col-12 {
+  width: 100%;
 }

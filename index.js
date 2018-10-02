@@ -75,7 +75,7 @@ let questions = [
   },
 ];
 
-$(document).ready(function(){
+function bindEventListeners(){
 
   $('.start').on('click', '.start', function(event){
     event.preventDefault();
@@ -108,12 +108,11 @@ $(document).ready(function(){
       $('.quiz #submit').hide();
       $('.quiz #next').show();
       $('.quiz .info').show();
-      $('.quiz .info').addClass('slide');
+      $('.quiz .info').addClass('fade');
+      $('input').removeClass('hover');
       if(currentQuestion >= questions.length){
         $('.quiz #next').hide();
       }
-    } else {
-      alert('You Must Select An Answer Before Submitting');
     }
   });
 
@@ -132,7 +131,7 @@ $(document).ready(function(){
     event.preventDefault();
     showQuestion();
   });
-});
+}
 
 function showQuestion(){
   $('.quiz #next').hide();
@@ -142,11 +141,10 @@ function showQuestion(){
   $('.quiz h3').text(`On question ${currentQuestion + 1} of ${questions.length}`);
   $('.quiz h2').text(question.title + ` Currently ${score} out of ${currentQuestion}`);
   $('.quiz ul').html('');
-  // $('.clue').css('background-image', "url('" + question.picture + "')");
   $('.clue').html(`
   <div class="description">
     <img src="${question.picture}" alt="image of quiz clue"><div class="info">
-    <h2>${question.answers[question.correct]}</h2>
+    <h3>${question.answers[question.correct]}</h3>
     <p>${question.description}</p>
     </div>
   </div>`);
@@ -154,9 +152,8 @@ function showQuestion(){
   for(var i = 0; i < question.answers.length; i++){
     $('.quiz ul').append(`
     <li>
-    <label>
-    <input type="button" role="button" class="choice" aria-label="option ${i} of four" tabindex="0" id="${i}" value="${question.answers[i]}" "required">
-    </label>
+    <input type="button" role="button" class="choice hover" aria-label="option ${i} of four" 
+    tabindex="0" id="${i}" value="${question.answers[i]}" "required">
     </li>
     `);
   }
@@ -189,3 +186,9 @@ function restart(){
   currentQuestion = 0;
   showQuestion();
 }
+
+function handleQuiz(){
+  bindEventListeners();
+}
+
+$(handleQuiz);
