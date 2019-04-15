@@ -12,16 +12,16 @@ let questions = [
   },
   {
     description: "Vasyl Lomanchenko is a Ukrainian professional boxer. He has held the WBA (Super) and Ring magazine lightweight titles since May 2018, and previously the WBO featherweight and junior lightweight titles between 2014 and 2018. As of September 2018, Lomachenko is ranked as the world's best active boxer, pound for pound, by ESPN; the Boxing Writers Association of America; the Transnational Boxing Rankings Board; and The Ring.",
-    picture: 'https://firenewsfeed.com/image/aHR0cHM6Ly93d3cudGhlc3VuLmNvLnVrL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE4LzA1L25pbnRjaGRicGljdDAwMDM3MjE2MDI5NC5qcGc=',
+    picture: 'http://fightnights.com/uploads/lomachenko.jpg',
     title: 'Who Is This Boxer?',
     answers: ['Wladimir Klitschko', 'Vasyl Lomachenko', 'Vitali Klitschko', 'Andreas Kotelnik'],
     correct: 1,
   },
   {
-    description: "Grayson is an American professional basketball player for the Utah Jazz of the National Basketball Association (NBA). He played college basketball at Duke University. Completed his Duke career with 1,996 points to rank 12th on the Blue Devils’ career scoring list and seventh on the program’s career free throw percentage list (.834).",
-    picture: 'https://www.nba.com/jazz/sites/jazz/files/gettyimages-1015668780.jpg',
+    description: "Jayson is an American professional basketball player for the Boston Celtics of the National Basketball Association (NBA). He played college basketball at Duke University. Jayson was drafted 3rd overall in 2017. He is an incredibly promising young player who looks to be a perennial all star.",
+    picture: 'https://4.bp.blogspot.com/-AdlPUN1ObTc/WwavMovJaiI/AAAAAAAADao/R0LZSxPNS6UTrzPv1HplGPipvwNwK0ncACLcBGAs/s1600/jayson%2Btatum%2B-%2Bmatt%2Bstone%2B-%2Bherald.jpg',
     title: 'Who Is This Basketball Player?',
-    answers: ['JJ Redick', 'Kyle Korver', 'Grayson Allen', 'Gordon Hayward'],
+    answers: ['Donovan Mitchell', 'Marvin Bagley', 'Jayson Tatum', 'Jaylen Brown'],
     correct: 2,
   },
   {
