@@ -9,7 +9,7 @@ When a selection is made, an overlay with the correct answer and a brief descrip
 Visual feedback is also given on the selection buttons as to whether you were correct or not. The top of the page also updates your
 current score and which question you are currently on.
 
-![submitted-question](https://user-images.githubusercontent.com/34799623/56157598-e2b43880-5f8d-11e9-8b21-329a6fcc8dbb.jpg)
+![](https://user-images.githubusercontent.com/34799623/56157598-e2b43880-5f8d-11e9-8b21-329a6fcc8dbb.jpg)
 
 When you have finished all ten questions, a page displays your final score and a button that allows you to retry the quiz.
 
