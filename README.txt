@@ -8,7 +8,6 @@ It is a simple, but efficient quiz game where you are given a picture of a sport
 When a selection is made, an overlay with the correct answer and a brief description of who they are is displayed over the image.
 Visual feedback is also given on the selection buttons as to whether you were correct or not. The top of the page also updates your
 current score and which question you are currently on.
-
 ![submitted-question](https://user-images.githubusercontent.com/34799623/56156520-6f112c00-5f8b-11e9-9ae9-4c3e75f9f425.jpg)
 
 When you have finished all ten questions, a page displays your final score and a button that allows you to retry the quiz.
